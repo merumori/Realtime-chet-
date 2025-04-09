@@ -10,7 +10,7 @@ export default function Register({ setPage }) {
 
   const register = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { username, password });
+      await axios.post('https://realtime-chet.onrender.com/api/auth/register', { username, password });
       setPage('login');
     } catch (err) {
       setError('Registration failed. Try again.');
