@@ -1,0 +1,74 @@
+.register-bg {
+    background-image: url('https://i.pinimg.com/originals/e3/1b/75/e31b752875679b64fce009922f9f0dda.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .register-container {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .register-card {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    border-radius: 16px;
+  }
+  
+  /* Text link to login */
+  .account-text {
+    color: #ffffff;
+  }
+  
+  .login-link {
+    color: #00d4ff;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .login-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00d4ff;
+    transition: width 0.3s ease;
+  }
+  
+  .login-link:hover {
+    color: #00f0ff;
+  }
+  
+  .login-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile responsive tweaks */
+  @media (max-width: 576px) {
+    .register-card {
+      padding: 1rem !important;
+      font-size: 0.9rem;
+    }
+  
+    .register-container {
+      max-width: 100%;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 992px) {
+    .register-container {
+      padding: 0 1rem;
+    }
+  }
+  

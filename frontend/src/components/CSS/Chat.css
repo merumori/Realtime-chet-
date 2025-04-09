@@ -1,0 +1,140 @@
+.whatsapp-container {
+    background-color: #ece5dd;
+    height: 100vh;
+    padding: 0;
+  }
+  
+  .sidebar {
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  
+  .chat-user:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .chat-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .chat-header,
+  .chat-footer {
+    background-color: #fff;
+  }
+  
+  .chat-body {
+    flex-grow: 1;
+    background-image: url('../img/chet.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+  }
+  
+  .chat-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-body::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+  }
+  
+  .message {
+    max-width: 60%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    border-radius: 7.5px 7.5px 0 7.5px;
+  }
+  
+  .received {
+    align-self: flex-start;
+    background-color: #fff;
+    border-radius: 7.5px 7.5px 7.5px 0;
+  }
+  
+  .message-time {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeInUp 0.3s ease-in-out;
+  }
+  
+  .animated-icon {
+    transition: transform 0.2s ease;
+  }
+  
+  .animated-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .send-btn {
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .send-btn:hover {
+    background-color: #0b8457 !important;
+    color: #fff;
+  }
+  
+  /* Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .chat-panel,
+    .sidebar {
+      padding: 0;
+    }
+  
+    .chat-header,
+    .chat-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .message {
+      max-width: 85%;
+    }
+  }
+  
