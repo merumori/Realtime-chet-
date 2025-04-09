@@ -10,7 +10,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import './CSS/Chat.css';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://realtime-chet.onrender.com');
 
 export default function Chat({ user }) {
   const [users, setUsers] = useState([]);
@@ -24,7 +24,7 @@ export default function Chat({ user }) {
   useEffect(() => {
     socket.emit('join', user._id);
 
-    axios.get(`http://localhost:5000/api/auth/users/${user._id}`).then((res) => {
+    axios.get(`https://realtime-chet.onrender.com/api/auth/users/${user._id}`).then((res) => {
       setUsers(res.data);
     });
 
@@ -53,7 +53,7 @@ export default function Chat({ user }) {
 
   const loadChat = async (r) => {
     setReceiver(r);
-    const res = await axios.get(`http://localhost:5000/api/chat/${user._id}/${r._id}`);
+    const res = await axios.get(`https://realtime-chet.onrender.com/api/chat/${user._id}/${r._id}`);
     setChat(res.data);
   };
 
@@ -69,12 +69,12 @@ export default function Chat({ user }) {
 
     setChat((prev) => [...prev, newMsg]);
     socket.emit('sendMessage', newMsg);
-    await axios.post('http://localhost:5000/api/chat/send', newMsg);
+    await axios.post('https://realtime-chet.onrender.com/api/chat/send', newMsg);
     setMessage('');
   };
 
   const deleteChat = async () => {
-    await axios.delete(`http://localhost:5000/api/chat/all/${user._id}/${receiver._id}`);
+    await axios.delete(`https://realtime-chet.onrender.com/api/chat/all/${user._id}/${receiver._id}`);
     setChat([]);
   };
 
